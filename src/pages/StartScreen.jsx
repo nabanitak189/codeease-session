@@ -10,28 +10,21 @@ const StartScreen = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="title">Welcome to the Game!</h1>
-      <p className="subtitle">Select your difficulty level to start:</p>
-      <div className="buttonContainer">
-        <button
-          className="button"
-          onClick={() => handleDifficultySelect("Easy")}
-        >
-          Easy
-        </button>
-        <button
-          className="button"
-          onClick={() => handleDifficultySelect("Medium")}
-        >
-          Medium
-        </button>
-        <button
-          className="button"
-          onClick={() => handleDifficultySelect("Hard")}
-        >
-          Hard
-        </button>
+    <div className="app-center">
+      <div className="panel container fade-in center-column soft-outline">
+        <h1 className="title">Welcome to the Game! 🌸</h1>
+        <p className="subtitle">Select your difficulty level to start:</p>
+        <div className="buttonContainer">
+          <button className="btn" onClick={() => handleDifficultySelect("Easy")}>
+            Easy
+          </button>
+          <button className="btn" onClick={() => handleDifficultySelect("Medium")}>
+            Medium
+          </button>
+          <button className="btn" onClick={() => handleDifficultySelect("Hard")}>
+            Hard
+          </button>
+        </div>
       </div>
     </div>
   );
