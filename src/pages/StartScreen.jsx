@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./StartScreen.css";
+import flower from "../assets/flower.svg";
 
 const StartScreen = () => {
   const navigate = useNavigate();
@@ -12,7 +13,8 @@ const StartScreen = () => {
   return (
     <div className="app-center">
       <div className="panel container fade-in center-column soft-outline">
-        <h1 className="title">Welcome to the Game! 🌸</h1>
+        <img src={flower} className="illustration" alt="flower" />
+        <h1 className="title sparkle">Welcome to the Game! 🌸</h1>
         <p className="subtitle">Select your difficulty level to start:</p>
         <div className="buttonContainer">
           <button className="btn" onClick={() => handleDifficultySelect("Easy")}>
