@@ -1,17 +1,33 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
 import StartScreen from "./pages/StartScreen";
 import GameScreen from "./pages/GameScreen";
 
-const App = () => {
+const PageWrapper = ({ children }) => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<StartScreen />} />
-        <Route path="/game" element={<GameScreen />} />
-      </Routes>
-    </BrowserRouter>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="min-h-screen"
+    >
+      {children}
+    </motion.div>
   );
 };
 
-export default App;
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageWrapper>
+              <
+
